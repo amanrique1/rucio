@@ -729,9 +729,9 @@ def rebalance_rse(
                 )
                 continue
         else:
-            #Move rule excluding current RSE
+            # Move rule excluding current RSE
             target_rse_exp = rule["rse_expression"]
-            #Clean expression in case of being rebalanced in the past
+            # Clean expression in case of being rebalanced in the past
             if rule["activity"] == "Data Rebalancing":
                 target_rse_exp = target_rse_exp.split('\\')[:-1].join('\\')
                 target_rse_exp = target_rse_exp[1:-1] if target_rse_exp[0] == '(' and target_rse_exp[-1] == ')' else target_rse_exp
